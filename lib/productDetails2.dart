@@ -11,6 +11,9 @@ class ProductDetails2 extends StatefulWidget {
 }
 
 class ProductDetails2State extends State<ProductDetails2> {
+  final scaffoldKey = GlobalKey<ScaffoldState>();
+  int? countControllerValue;
+
   @override
   void initState() {
     super.initState();
@@ -49,58 +52,97 @@ class ProductDetails2State extends State<ProductDetails2> {
           Expanded(
               child: SingleChildScrollView(
                   child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
-                            16, 6, 16, 16),
-                        child: ClipRRect(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsetsDirectional.fromSTEB(16, 6, 16, 16),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(12),
+                  child: Image.network(
+                    widget.product.imageUrl,
+                    width: double.infinity,
+                    height: 300,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+              const Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(16, 0, 16, 0),
+                  child: Text(
+                    'Details',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 30,
+                    ),
+                  )),
+              const SizedBox(
+                height: 10,
+              ),
+              Padding(
+                padding: const EdgeInsetsDirectional.fromSTEB(16, 4, 0, 0),
+                child: Text(
+                  '\$${widget.product.price}',
+                  textAlign: TextAlign.start,
+                  style: const TextStyle(color: Colors.white70, fontSize: 25),
+                ),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Padding(
+                padding: const EdgeInsetsDirectional.fromSTEB(16, 8, 10, 8),
+                child: Text(
+                  'Name: ${widget.product.name} \n\nAvailable Sizes: 39,40,42, 43, 44 \n\nColors: \n\nDescription:\nIntroducing our sleek and stylish sneaker shoe designed for both fashion and function. Crafted with premium materials, its breathable mesh upper provides comfort and ventilation. The cushioned insole and durable rubber outsole ensure all day comfort and support. Its modern design features a streamlined silhouette, making it perfect for any casual or athletic occasion. Elevate your footwear game with these versatile sneakers.',
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                  ),
+                ),
+              ),
+            ],
+          ))),
+          Material(
+            color: Colors.transparent,
+            elevation: 3,
+            shape:
+                const RoundedRectangleBorder(borderRadius: BorderRadius.zero),
+            child: Container(
+              width: double.infinity,
+              height: 85,
+              decoration: BoxDecoration(
+                  color: Colors.transparent.withOpacity(0.1),
+                  boxShadow: [
+                    BoxShadow(
+                        blurRadius: 4,
+                        color: Colors.teal.withOpacity(0.1),
+                        offset: const Offset(0, -2)),
+                  ]),
+              child: Padding(
+                padding: const EdgeInsetsDirectional.fromSTEB(25, 10, 25, 15),
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      width: 170,
+                      height: 60,
+                      decoration: BoxDecoration(
+                          color: Colors.white12,
                           borderRadius: BorderRadius.circular(12),
-                          child: Image.network(
-                            widget.product.imageUrl,
-                            width: double.infinity,
-                            height: 300,
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                      ),
-                      const Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(16, 0, 16, 0),
-                          child: Text(
-                            'Kicks details',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 30,
-                            ),
-                          )),
-                      Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
-                            16, 4, 0, 0),
-                        child: Text(
-                          '\$${widget.product.price}',
-                          textAlign: TextAlign.start,
-                          style: const TextStyle(
-                              color: Colors.white70, fontSize: 25),
-                        ),
-                      ),
-                      const Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(16, 8, 16, 8),
-                        child: Text(
-                          'Name: \nSizes: \n\nColors: \nDescription:  \n',
-                          style: TextStyle(
-                            color: Colors.teal,
-                            fontSize: 20,
-                          ),
-                        ),
-                      ),
-                    ],
-                  )))
+                          shape: BoxShape.rectangle,
+                          border: Border.all(width: 2)),
+                      //child starts here
+                    )
+                  ],
+                ),
+              ),
+            ),
+          )
         ],
       ),
-      bottomNavigationBar: BottomAppBar(),
     );
   }
 }
