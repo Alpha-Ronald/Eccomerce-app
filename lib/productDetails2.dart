@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_projects/count_controller.dart';
 import 'package:flutter_projects/landing_page.dart';
 
 class ProductDetails2 extends StatefulWidget {
@@ -134,7 +135,26 @@ class ProductDetails2State extends State<ProductDetails2> {
                           borderRadius: BorderRadius.circular(12),
                           shape: BoxShape.rectangle,
                           border: Border.all(width: 2)),
-                      //child starts here
+                      child: CountController(
+                        decrementIconBuilder: (bool enabled) => const Icon(
+                          Icons.remove_rounded,
+                          size: 25,
+                        ),
+                        incrementIconBuilder: (bool enabled) => const Icon(
+                          Icons.add_rounded,
+                          size: 25,
+                        ),
+                        countBuilder: (int count) => Text(
+                          count.toString(),
+                          style: const TextStyle(fontSize: 22),
+                        ),
+                        count: countControllerValue ??= 1,
+                        updateCount: (count) =>
+                            setState(() => countControllerValue = count),
+                        stepSize: 1,
+                        minimum: 1,
+                        contentPadding: const EdgeInsets.all(10),
+                      ),
                     )
                   ],
                 ),

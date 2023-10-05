@@ -8,7 +8,7 @@ class CountController extends StatefulWidget {
       required this.countBuilder,
       required this.count,
       required this.updateCount,
-      required this.stepSize,
+      this.stepSize = 1,
       this.minimum,
       this.maximum,
       required this.contentPadding});
@@ -36,9 +36,9 @@ class CountControllerState extends State<CountController> {
 
   int? get stepSize => widget.stepSize;
 
-  bool get canDecrement => minimum == null;
+  bool get canDecrement => minimum == null || count - stepSize! >= minimum!;
 
-  bool get canIncrement => maximum == null;
+  bool get canIncrement => maximum == null || count - stepSize! <= maximum!;
 
   void decrementCounter() {
     if (canDecrement) {
