@@ -155,7 +155,17 @@ class ProductDetails2State extends State<ProductDetails2> {
                         minimum: 1,
                         contentPadding: const EdgeInsets.all(10),
                       ),
-                    )
+                    ),
+                    //trying to input a button that works with the bloc directly into the product details page
+                    ElevatedButton(
+                        onPressed: () {},
+                        child: Container(
+                            width: 150,
+                            height: 50,
+                            decoration: const BoxDecoration(
+                              color: Colors.purple,
+                              shape: BoxShape.rectangle,
+                            )))
                   ],
                 ),
               ),
