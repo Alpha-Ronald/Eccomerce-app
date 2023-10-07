@@ -160,11 +160,18 @@ class ProductDetails2State extends State<ProductDetails2> {
                     ElevatedButton(
                         onPressed: () {},
                         child: Container(
-                            width: 150,
+                            width: 100,
                             height: 50,
                             decoration: const BoxDecoration(
-                              color: Colors.purple,
+                              // color: Colors.purple,
                               shape: BoxShape.rectangle,
+                            ),
+                            child: const Center(
+                              child: Text(
+                                'Add to cart',
+                                textAlign: TextAlign.center,
+                                selectionColor: Colors.white,
+                              ),
                             )))
                   ],
                 ),
