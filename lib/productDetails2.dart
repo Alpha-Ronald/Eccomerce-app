@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_projects/blocstate.dart';
+import 'package:flutter_projects/cartpage.dart';
 import 'package:flutter_projects/count_controller.dart';
 import 'package:flutter_projects/landing_page.dart';
 
@@ -42,7 +45,10 @@ class ProductDetails2State extends State<ProductDetails2> {
               width: 5,
             ),
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => CartPage()));
+              },
               icon: const Icon(Icons.shopping_bag_sharp),
               iconSize: 30,
             ),
@@ -158,7 +164,11 @@ class ProductDetails2State extends State<ProductDetails2> {
                     ),
                     //trying to input a button that works with the bloc directly into the product details page
                     ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Product p = widget.product;
+                          p.quantity = countControllerValue!.toInt();
+                          BlocProvider.of<CartBloc>(context).add(AddProduct(p));
+                        },
                         child: Container(
                             width: 100,
                             height: 50,

@@ -1,10 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 //import 'package:flutter_projects/landing_page.dart';
 import 'package:flutter_projects/SignIn_page.dart';
+import 'package:flutter_projects/blocObserverdemo.dart';
+import 'package:flutter_projects/blocstate.dart';
 import 'package:flutter_projects/splashscreen.dart';
 
+/*void main() {
+  runApp(
+      BlocProvider(create: (context) => CartBloc(), child: const FirstApp()));
+}*/
+
 void main() {
+  Bloc.observer = SimpleBlocObserver();
   runApp(const FirstApp());
 }
 
@@ -95,7 +104,7 @@ class RegistrationPage extends StatelessWidget {
               },
               style: ElevatedButton.styleFrom(
                   padding:
-                  const EdgeInsets.symmetric(horizontal: 40, vertical: 16),
+                      const EdgeInsets.symmetric(horizontal: 40, vertical: 16),
                   backgroundColor: Colors.white),
               child: const Text(
                 "Sign Up",
