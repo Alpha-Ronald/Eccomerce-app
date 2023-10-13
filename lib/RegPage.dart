@@ -1,34 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-
-//import 'package:flutter_projects/landing_page.dart';
 import 'package:flutter_projects/SignIn_page.dart';
-import 'package:flutter_projects/blocObserverdemo.dart';
-import 'package:flutter_projects/blocstate.dart';
-import 'package:flutter_projects/splashscreen.dart';
-
-/*void main() {
-  runApp(
-      BlocProvider(create: (context) => CartBloc(), child: const FirstApp()));
-}*/
-
-void main() {
-  Bloc.observer = SimpleBlocObserver();
-  runApp(const FirstApp());
-}
-
-class FirstApp extends StatelessWidget {
-  const FirstApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: const SplashScreen(),
-      theme: ThemeData.dark(),
-    );
-  }
-}
 
 class RegistrationPage extends StatelessWidget {
   const RegistrationPage({super.key});
@@ -184,49 +155,3 @@ class SignUpSuccessful extends StatelessWidget {
             )));
   }
 }
-
-/*class AppBar2 extends StatelessWidget implements PreferredSizeWidget {
-  const AppBar2({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return AppBar(
-      automaticallyImplyLeading: false,
-      backgroundColor: Colors.teal.withOpacity(0.2),
-      title: Row(
-        children: [
-          Expanded(
-              child: Container(
-            decoration: BoxDecoration(
-                shape: BoxShape.rectangle,
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(15)),
-            child: const TextField(
-              style: TextStyle(color: Colors.black),
-              decoration: InputDecoration(
-                  prefixIconColor: Colors.teal,
-                  hintStyle: TextStyle(color: Colors.black, fontSize: 15),
-                  hintText: 'Search shoe',
-                  prefixIcon: Icon(Icons.search)),
-            ),
-          )),
-          const SizedBox(
-            width: 10,
-          ),
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.shopping_bag_sharp),
-            iconSize: 30,
-          ),
-        ],
-      ),
-      // actions: <Widget>[ShoppingCartBadge()],
-    );
-  }
-
-  @override
-  // TODO: implement preferredSize
-  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
-}
-
- */

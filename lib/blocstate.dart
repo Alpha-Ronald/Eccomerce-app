@@ -36,18 +36,20 @@ class RemoveProduct extends CartEvent {
 //Class State
 
 abstract class CartState {
-  /* final List<Product> cartItem;
-  CartState({this.cartItem = const[
-  ]});
-  @override
-  List<Object> get props => [];*/
+  final List<Product> cartItem;
+
+  CartState({this.cartItem = const []});
+
+  List<Object> get props => [];
 }
 
 class ProductAdded extends CartState {
+  @override
   final List<Product> cartItem;
 
   ProductAdded({required this.cartItem});
 
+  @override
   List<Object> get props => [cartItem];
 
   @override
@@ -55,10 +57,12 @@ class ProductAdded extends CartState {
 }
 
 class ProductRemoved extends CartState {
+  @override
   final List<Product> cartItem;
 
   ProductRemoved({required this.cartItem});
 
+  @override
   List<Object> get props => [cartItem];
 
   @override
