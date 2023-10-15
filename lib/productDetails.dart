@@ -47,7 +47,7 @@ class ProductDetails2State extends State<ProductDetails2> {
             IconButton(
               onPressed: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => CartPage()));
+                    MaterialPageRoute(builder: (context) => const CartPage()));
               },
               icon: const Icon(Icons.shopping_bag_sharp),
               iconSize: 30,

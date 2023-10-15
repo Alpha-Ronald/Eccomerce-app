@@ -36,15 +36,14 @@ class RemoveProduct extends CartEvent {
 //Class State
 
 abstract class CartState {
-  final List<Product> cartItem;
+  //final List<Product> cartItem;
 
-  CartState({this.cartItem = const []});
+  //CartState({this.cartItem = const []});
 
   List<Object> get props => [];
 }
 
 class ProductAdded extends CartState {
-  @override
   final List<Product> cartItem;
 
   ProductAdded({required this.cartItem});
@@ -57,7 +56,6 @@ class ProductAdded extends CartState {
 }
 
 class ProductRemoved extends CartState {
-  @override
   final List<Product> cartItem;
 
   ProductRemoved({required this.cartItem});
@@ -77,6 +75,7 @@ class CartBloc extends Bloc<CartEvent, CartState> {
 
   List<Product> get items => cartItems;
 
+  @override
   Stream<CartState> mapEventToState(CartEvent event) async* {
     if (event is AddProduct) {
       cartItems.add(event.productIndex);
@@ -87,3 +86,28 @@ class CartBloc extends Bloc<CartEvent, CartState> {
     }
   }
 }
+
+//had to downgrade the dependency to futer boc7.0.0
+
+//i'd create a new branch and try and make the code work for flutter bloc 8.1.3
+
+/*class CartBloc extends Bloc<CartEvent, CartState> {
+  CartBloc() : super(CartLoading()) {
+    on<AddProduct>(onItemAdded);
+  }
+
+  final List<Product> cartItems = [];
+
+  List<Product> get items => cartItems;
+
+  Future<void> onProductAdded(
+      AddProduct event, Emitter<CartState> emit) async* {
+    cartItems.add(event.productIndex);
+    emit(ProductAdded(cartItem: List.from(cartItems)));
+
+    void onProductRemoved(RemoveProduct event, Emitter<CartState> emit) {
+      cartItems.remove(event.productIndex);
+      emit(ProductRemoved(cartItem: List.from(cartItems)));
+    }
+  }
+}*/
