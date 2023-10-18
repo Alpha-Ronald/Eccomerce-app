@@ -4,6 +4,7 @@ import 'package:flutter_projects/blocstate.dart';
 import 'package:flutter_projects/cartpage.dart';
 import 'package:flutter_projects/count_controller.dart';
 import 'package:flutter_projects/landing_page.dart';
+import 'package:badges/badges.dart' as badges;
 
 class ProductDetails2 extends StatefulWidget {
   const ProductDetails2({super.key, required this.product});
@@ -27,32 +28,61 @@ class ProductDetails2State extends State<ProductDetails2> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          automaticallyImplyLeading: true,
-          backgroundColor: Colors.teal.withOpacity(0.5),
-          title: Row(children: [
-            Expanded(
-              child: Text(
-                ' ${widget.product.name}',
-                textAlign: TextAlign.center,
-                style: const TextStyle(
-                    color: Colors.black,
-                    fontSize: 29,
-                    fontStyle: FontStyle.italic,
-                    fontWeight: FontWeight.bold),
-              ),
-            ),
-            const SizedBox(
-              width: 5,
-            ),
-            IconButton(
+        automaticallyImplyLeading: true,
+        backgroundColor: Colors.teal.withOpacity(0.5),
+        title: Text(
+          ' ${widget.product.name}',
+          textAlign: TextAlign.center,
+          style: const TextStyle(
+              color: Colors.black,
+              fontSize: 29,
+              fontStyle: FontStyle.italic,
+              fontWeight: FontWeight.bold),
+        ),
+        actions: [
+          BlocBuilder<CartBloc, CartState>(builder: (_, cartState) {
+            List<Product> cartItem = cartState.cartItem;
+            return Padding(
+                padding: const EdgeInsetsDirectional.fromSTEB(0, 8, 24, 0),
+                child: badges.Badge(
+                  badgeContent: Text(
+                    '${cartItem.length}',
+                    style: const TextStyle(color: Colors.white),
+                  ),
+                  showBadge: true,
+                  badgeStyle: const badges.BadgeStyle(
+                    shape: badges.BadgeShape.circle,
+                    badgeColor: Colors.black,
+                    elevation: 4,
+                    padding: EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
+                  ),
+                  position: badges.BadgePosition.topEnd(),
+                  //animationType: BadgeAnimationType.scale,toAimate: true
+                  child: IconButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const CartPage()));
+                    },
+                    icon: const Icon(
+                      Icons.shopping_bag_sharp,
+                      size: 30,
+                    ),
+                  ),
+                ));
+          })
+        ],
+
+        /*IconButton(
               onPressed: () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => const CartPage()));
               },
               icon: const Icon(Icons.shopping_bag_sharp),
               iconSize: 30,
-            ),
-          ])),
+            ),*/
+      ),
       body: Column(
         mainAxisSize: MainAxisSize.max,
         children: [

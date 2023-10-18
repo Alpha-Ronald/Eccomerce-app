@@ -36,7 +36,7 @@ class RemoveProduct extends CartEvent {
 //Class State
 
 abstract class CartState {
-  //final List<Product> cartItem;
+  late final List<Product> cartItem;
 
   //CartState({this.cartItem = const []});
 

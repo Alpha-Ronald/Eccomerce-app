@@ -1,11 +1,11 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_projects/productDetails.dart';
-
-//import 'package:flutter_projects/ProductDetails_page.dart';
-//import 'package:badges/badges.dart';
-//import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:badges/badges.dart' as badges;
+import 'blocstate.dart';
+import 'cartpage.dart';
 
 final List<String> productImageUrls = [
   'https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c25lYWtlcnN8ZW58MHx8MHx8fDA%3D&w=1000&q=80',
@@ -108,14 +108,47 @@ class LandingPage extends StatelessWidget {
               const SizedBox(
                 width: 10,
               ),
-              IconButton(
+              /*IconButton(
                 onPressed: () {},
                 icon: const Icon(Icons.shopping_bag_sharp),
                 iconSize: 30,
-              ),
+              ),*/
             ],
           ),
-          // actions: <Widget>[ShoppingCartBadge()],
+          actions: [
+            BlocBuilder<CartBloc, CartState>(builder: (_, cartState) {
+              List<Product> cartItem = cartState.cartItem;
+              return Padding(
+                  padding: const EdgeInsetsDirectional.fromSTEB(0, 8, 24, 0),
+                  child: badges.Badge(
+                    badgeContent: Text(
+                      '${cartItem.length}',
+                      style: const TextStyle(color: Colors.white),
+                    ),
+                    showBadge: true,
+                    badgeStyle: const badges.BadgeStyle(
+                      shape: badges.BadgeShape.circle,
+                      badgeColor: Colors.black,
+                      elevation: 4,
+                      padding: EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
+                    ),
+                    position: badges.BadgePosition.topEnd(),
+                    //animationType: BadgeAnimationType.scale,toAnimate: true
+                    child: IconButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const CartPage()));
+                      },
+                      icon: const Icon(
+                        Icons.shopping_bag_sharp,
+                        size: 30,
+                      ),
+                    ),
+                  ));
+            })
+          ],
         ),
         body: Padding(
             padding: const EdgeInsets.all(10),
