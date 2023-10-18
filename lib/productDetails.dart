@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_projects/blocstate.dart';
-import 'package:flutter_projects/cartpage.dart';
+import 'package:flutter_projects/blocState.dart';
+import 'package:flutter_projects/cartPage.dart';
 import 'package:flutter_projects/count_controller.dart';
 import 'package:flutter_projects/landing_page.dart';
 import 'package:badges/badges.dart' as badges;

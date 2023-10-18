@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:flutter_projects/blocObserverdemo.dart';
-import 'package:flutter_projects/blocstate.dart';
+import 'package:flutter_projects/blocState.dart';
 import 'package:flutter_projects/splashscreen.dart';
 
 /*void main() {

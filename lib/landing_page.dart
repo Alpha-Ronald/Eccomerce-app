@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_projects/productDetails.dart';
 import 'package:badges/badges.dart' as badges;
-import 'blocstate.dart';
-import 'cartpage.dart';
+import 'blocState.dart';
+import 'cartPage.dart';
 
 final List<String> productImageUrls = [
   'https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c25lYWtlcnN8ZW58MHx8MHx8fDA%3D&w=1000&q=80',
