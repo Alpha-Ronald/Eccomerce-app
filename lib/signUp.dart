@@ -147,7 +147,7 @@ class SignUpSuccessful extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      /*appBar: AppBar(
+        /*appBar: AppBar(
           backgroundColor: Colors.teal.withOpacity(0.2),
           title: const Text(
             'Rex Shoe collection',
@@ -156,28 +156,46 @@ class SignUpSuccessful extends StatelessWidget {
         ),*/
         body: Padding(
             padding: const EdgeInsets.all(50),
-            child: Row(
+            child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text('Account Successfully created.'),
+                const Text(
+                  'Account \nSuccessfully \ncreated.',
+                  style: TextStyle(color: Colors.tealAccent, fontSize: 35),
+                ),
                 const SizedBox(
-                  width: 5,
+                  height: 25,
                 ),
                 ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const SignInPage()));
-                    },
-                    style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.white,
-                        foregroundColor: Colors.teal),
-                    child: const Text(
-                      'Sign in',
-                      style: TextStyle(fontSize: 12),
-                    ))
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const SignInPage()));
+                  },
+                  style: ElevatedButton.styleFrom(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 40, vertical: 16),
+                      backgroundColor: Colors.tealAccent.withOpacity(0.2),
+                      minimumSize: const Size(350, 60),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: (BorderRadius.circular(15)))),
+                  child: const Text(
+                    "Sign In",
+                    style: TextStyle(fontSize: 16, color: Colors.white),
+                  ),
+                ),
               ],
             )));
   }
 }
+
+/*
+ElevatedButton(
+onPressed: () {
+Navigator.push(
+context,
+MaterialPageRoute(
+builder: (context) => const SignInPage()));
+},*/
