@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_projects/SignIn_page.dart';
+import 'package:flutter_projects/signIn_page.dart';
 
-class RegistrationPage extends StatelessWidget {
-  const RegistrationPage({super.key});
+class SignUpPage extends StatelessWidget {
+  const SignUpPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -51,16 +51,16 @@ class RegistrationPage extends StatelessWidget {
               decoration: InputDecoration(labelText: 'Gender'),
             ),*/
             const SizedBox(
-                  height: 15,
+              height: 15,
             ),
-                const TextField(
+            const TextField(
               decoration: InputDecoration(
                   labelText: 'Email', prefixIcon: Icon(Icons.mail)),
             ),
-                const SizedBox(
-                  height: 15,
+            const SizedBox(
+              height: 15,
             ),
-                /*const TextField(
+            /*const TextField(
               decoration: InputDecoration(labelText: 'Phone number'),
             ),
             const SizedBox(
@@ -73,46 +73,46 @@ class RegistrationPage extends StatelessWidget {
               height: 10,
             ),*/
             const TextField(
-                  obscureText: true,
+              obscureText: true,
               decoration: InputDecoration(
                   labelText: 'New Password',
                   prefixIcon: Icon(CupertinoIcons.padlock)),
             ),
-                const SizedBox(
-                  height: 15,
-                ),
-                const TextField(
-                  obscureText: true,
-                  decoration: InputDecoration(
-                      labelText: 'Confirm Password',
-                      prefixIcon: Icon(CupertinoIcons.padlock_solid)),
-                ),
-                const SizedBox(height: 60),
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const SignUpSuccessful()));
-                  },
-                  style: ElevatedButton.styleFrom(
-                      padding:
-                      const EdgeInsets.symmetric(horizontal: 40, vertical: 16),
-                      backgroundColor: Colors.tealAccent.withOpacity(0.8),
-                      minimumSize: const Size(350, 60),
-                      shape: RoundedRectangleBorder(
-                          borderRadius: (BorderRadius.circular(15)))),
-                  child: const Text(
-                    "Sign Up",
-                    style: TextStyle(fontSize: 16, color: Colors.white),
-                  ),
-                ),
-                const SizedBox(
-                  height: 40,
+            const SizedBox(
+              height: 15,
             ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
+            const TextField(
+              obscureText: true,
+              decoration: InputDecoration(
+                  labelText: 'Confirm Password',
+                  prefixIcon: Icon(CupertinoIcons.padlock_solid)),
+            ),
+            const SizedBox(height: 60),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const SignUpSuccessful()));
+              },
+              style: ElevatedButton.styleFrom(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 40, vertical: 16),
+                  backgroundColor: Colors.tealAccent.withOpacity(0.5),
+                  minimumSize: const Size(350, 60),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: (BorderRadius.circular(15)))),
+              child: const Text(
+                "Sign Up",
+                style: TextStyle(fontSize: 16, color: Colors.white),
+              ),
+            ),
+            const SizedBox(
+              height: 40,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
                 const Text('Already have an account?'),
                 const SizedBox(
                   width: 5,
@@ -132,20 +132,6 @@ class RegistrationPage extends StatelessWidget {
                         fontSize: 15),
                   ),
                 )
-                /*ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const SignInPage()));
-                    },
-                    style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.white.withOpacity(0.5),
-                        foregroundColor: Colors.red),
-                    child: const Text(
-                      'Sign in',
-                      style: TextStyle(fontSize: 12),
-                    ))*/
               ],
             )
           ],
@@ -161,13 +147,13 @@ class SignUpSuccessful extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
+      /*appBar: AppBar(
           backgroundColor: Colors.teal.withOpacity(0.2),
           title: const Text(
             'Rex Shoe collection',
             style: TextStyle(color: Colors.blue, fontStyle: FontStyle.italic),
           ),
-        ),
+        ),*/
         body: Padding(
             padding: const EdgeInsets.all(50),
             child: Row(
