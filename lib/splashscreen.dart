@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_projects/RegPage.dart';
+import 'package:flutter_projects/signUp.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
