@@ -37,11 +37,6 @@ class LandingPage extends StatelessWidget {
               const SizedBox(
                 width: 10,
               ),
-              /*IconButton(
-                onPressed: () {},
-                icon: const Icon(Icons.shopping_bag_sharp),
-                iconSize: 30,
-              ),*/
             ],
           ),
           actions: [
