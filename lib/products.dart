@@ -32,13 +32,14 @@ final List<Product> products = [
   Product(
       id: 2,
       name: 'Stark',
-      imageUrl: 'https://static-uc.olist.ng/upload/20200613/y9kzb0afu2p.jpg',
+      imageUrl:
+          'https://images.unsplash.com/photo-1597045566677-8cf032ed6634?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHNuZWFrZXJ8ZW58MHx8MHx8fDA%3D',
       price: 65.5),
   Product(
       id: 3,
       name: 'Stone',
       imageUrl:
-          'https://i.insider.com/59b7f9d638d20d1f008b4c6f?width=1200&format=jpeg',
+          'https://images.unsplash.com/photo-1603787081207-362bcef7c144?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c25lYWtlcnxlbnwwfHwwfHx8MA%3D%3D',
       price: 65.5),
   Product(
       id: 4,
@@ -49,18 +50,19 @@ final List<Product> products = [
   Product(
       id: 5,
       name: 'Storm',
-      imageUrl: 'https://static-uc.olist.ng/upload/20200613/y9kzb0afu2p.jpg',
+      imageUrl:
+          'https://images.unsplash.com/photo-1543508282-6319a3e2621f?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzF8fHNuZWFrZXJ8ZW58MHx8MHx8fDA%3D',
       price: 65.5),
   Product(
       id: 6,
       name: 'Rike',
       imageUrl:
-          'https://fancysoles.com.ng/wp-content/uploads/2023/06/8be8e466775e87c83e5133450c47092a.jpg',
+          'https://images.unsplash.com/photo-1600269452121-4f2416e55c28?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDJ8fHNuZWFrZXJ8ZW58MHx8MHx8fDA%3D',
       price: 65.5),
   Product(
       id: 7,
       name: 'Vane',
       imageUrl:
-          'https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c25lYWtlcnN8ZW58MHx8MHx8fDA%3D&w=1000&q=80',
+          'https://images.unsplash.com/photo-1581017316471-1f6ef7ce6fd3?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjN8fHNuZWFrZXJ8ZW58MHx8MHx8fDA%3D',
       price: 65.5),
 ];

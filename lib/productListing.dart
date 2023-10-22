@@ -28,9 +28,9 @@ class LandingPage extends StatelessWidget {
                 child: const TextField(
                   style: TextStyle(color: Colors.black),
                   decoration: InputDecoration(
-                      prefixIconColor: Colors.teal,
+                      prefixIconColor: Colors.black,
                       hintStyle: TextStyle(color: Colors.black, fontSize: 15),
-                      hintText: 'Search shoe',
+                      hintText: 'Search product here...',
                       prefixIcon: Icon(Icons.search)),
                 ),
               )),
@@ -55,11 +55,11 @@ class LandingPage extends StatelessWidget {
                       style: const TextStyle(color: Colors.white),
                     ),
                     showBadge: true,
-                    badgeStyle: const badges.BadgeStyle(
+                    badgeStyle: badges.BadgeStyle(
                       shape: badges.BadgeShape.circle,
-                      badgeColor: Colors.black,
+                      badgeColor: Colors.tealAccent.withOpacity(0.5),
                       elevation: 4,
-                      padding: EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
+                      padding: const EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
                     ),
                     position: badges.BadgePosition.topEnd(),
                     //animationType: BadgeAnimationType.scale,toAnimate: true
@@ -71,7 +71,7 @@ class LandingPage extends StatelessWidget {
                                 builder: (context) => const CartPage()));
                       },
                       icon: const Icon(
-                        Icons.shopping_bag_sharp,
+                        Icons.shopping_cart,
                         size: 30,
                       ),
                     ),
@@ -90,7 +90,7 @@ class LandingPage extends StatelessWidget {
                   return Builder(
                     builder: (BuildContext context) {
                       return ClipRRect(
-                          borderRadius: BorderRadius.circular(20),
+                          borderRadius: BorderRadius.circular(15),
                           child: Container(
                             width: double.infinity,
                             margin: const EdgeInsets.symmetric(
@@ -136,7 +136,7 @@ class LandingPage extends StatelessWidget {
                         },
                         child: Container(
                           decoration: BoxDecoration(
-                              color: Colors.teal.withOpacity(0.1),
+                              color: Colors.tealAccent.withOpacity(0.1),
                               borderRadius: BorderRadius.circular(8)),
                           child: Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
@@ -176,10 +176,9 @@ class LandingPage extends StatelessWidget {
                                             .fromSTEB(8, 4, 0, 0),
                                         child: Text(
                                           product.name,
-                                          style: TextStyle(
+                                          style: const TextStyle(
                                               fontStyle: FontStyle.italic,
-                                              color: Colors.white70
-                                                  .withOpacity(0.7),
+                                              color: Colors.white,
                                               fontSize: 14,
                                               fontWeight: FontWeight.bold),
                                         ),
@@ -189,7 +188,7 @@ class LandingPage extends StatelessWidget {
                                 ),
                                 Padding(
                                   padding: const EdgeInsetsDirectional.fromSTEB(
-                                      0, 3, 0, 0),
+                                      0, 1, 0, 0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
@@ -200,7 +199,7 @@ class LandingPage extends StatelessWidget {
                                           '\$ ${product.price}',
                                           style: const TextStyle(
                                               fontSize: 15,
-                                              color: Colors.green),
+                                              color: Colors.white),
                                         ),
                                       ),
                                     ],
