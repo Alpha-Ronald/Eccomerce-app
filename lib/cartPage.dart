@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_projects/blocState.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-import 'landing_page.dart';
+import 'package:flutter_projects/products.dart';
 
 class CartPage extends StatefulWidget {
   const CartPage({super.key});

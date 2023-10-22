@@ -4,80 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_projects/productDetails.dart';
 import 'package:badges/badges.dart' as badges;
+import 'package:flutter_projects/products.dart';
 import 'blocState.dart';
 import 'cartPage.dart';
-
-final List<String> productImageUrls = [
-  'https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c25lYWtlcnN8ZW58MHx8MHx8fDA%3D&w=1000&q=80',
-  'https://images.unsplash.com/photo-1579338559194-a162d19bf842?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8c25lYWtlcnN8ZW58MHx8MHx8fDA%3D&w=1000&q=80',
-  'https://i.insider.com/59b7f9d638d20d1f008b4c6f?width=1200&format=jpeg',
-  'https://static-uc.olist.ng/upload/20200613/y9kzb0afu2p.jpg',
-  'https://fancysoles.com.ng/wp-content/uploads/2023/06/8be8e466775e87c83e5133450c47092a.jpg',
-  'https://canary.contestimg.wish.com/api/webimage/5ebe8a136e995c0302ab17cb-large.jpg?cache_buster=c60db8584f7ff3a99ee096202bdac84d',
-  'https://i.insider.com/59b7f9d638d20d1f008b4c6f?width=1200&format=jpeg',
-  'https://static-uc.olist.ng/upload/20200613/y9kzb0afu2p.jpg',
-  'https://fancysoles.com.ng/wp-content/uploads/2023/06/8be8e466775e87c83e5133450c47092a.jpg',
-  'https://static-uc.olist.ng/upload/20200613/y9kzb0afu2p.jpg',
-];
-
-class Product {
-  final int id;
-  final String name;
-  final String imageUrl;
-  final double price;
-  int quantity;
-
-  Product(
-      {required this.id,
-      required this.name,
-      required this.imageUrl,
-      required this.price,
-      this.quantity = 0});
-}
-//final product = products[index];
-
-final List<Product> products = [
-  Product(
-      id: 1,
-      name: 'Champion',
-      imageUrl:
-          'https://i.insider.com/59b7f9d638d20d1f008b4c6f?width=1200&format=jpeg',
-      price: 55.5),
-  Product(
-      id: 2,
-      name: 'Stark',
-      imageUrl: 'https://static-uc.olist.ng/upload/20200613/y9kzb0afu2p.jpg',
-      price: 65.5),
-  Product(
-      id: 3,
-      name: 'Stone',
-      imageUrl:
-          'https://i.insider.com/59b7f9d638d20d1f008b4c6f?width=1200&format=jpeg',
-      price: 65.5),
-  Product(
-      id: 4,
-      name: 'Supra',
-      imageUrl:
-          'https://images.unsplash.com/photo-1579338559194-a162d19bf842?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8c25lYWtlcnN8ZW58MHx8MHx8fDA%3D&w=1000&q=80',
-      price: 65.5),
-  Product(
-      id: 5,
-      name: 'Storm',
-      imageUrl: 'https://static-uc.olist.ng/upload/20200613/y9kzb0afu2p.jpg',
-      price: 65.5),
-  Product(
-      id: 6,
-      name: 'Rike',
-      imageUrl:
-          'https://fancysoles.com.ng/wp-content/uploads/2023/06/8be8e466775e87c83e5133450c47092a.jpg',
-      price: 65.5),
-  Product(
-      id: 7,
-      name: 'Vane',
-      imageUrl:
-          'https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c25lYWtlcnN8ZW58MHx8MHx8fDA%3D&w=1000&q=80',
-      price: 65.5),
-];
 
 class LandingPage extends StatelessWidget {
   const LandingPage({super.key});
@@ -117,7 +46,7 @@ class LandingPage extends StatelessWidget {
           ),
           actions: [
             BlocBuilder<CartBloc, CartState>(builder: (_, cartState) {
-              List<Product> cartItem = cartState.cartItem;
+              List cartItem = cartState.cartItem;
               return Padding(
                   padding: const EdgeInsetsDirectional.fromSTEB(0, 8, 24, 0),
                   child: badges.Badge(
@@ -160,26 +89,25 @@ class LandingPage extends StatelessWidget {
                 items: productImageUrls.map((imageUrl) {
                   return Builder(
                     builder: (BuildContext context) {
-                      return Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15),
-                          color: Colors.teal.withOpacity(0.2),
-                        ),
-                        width: double.infinity,
-                        margin: const EdgeInsets.symmetric(
-                            horizontal: 0, vertical: 5),
-                        child: CachedNetworkImage(
-                          fadeInCurve: Curves.easeIn,
-                          imageUrl: imageUrl,
-                          fit: BoxFit.contain,
-                          placeholder: (context, url) => const Center(
-                            child: CircularProgressIndicator(),
-                          ),
-                          errorWidget: (context, url, error) => const Center(
-                            child: Icon(Icons.error),
-                          ),
-                        ),
-                      );
+                      return ClipRRect(
+                          borderRadius: BorderRadius.circular(20),
+                          child: Container(
+                            width: double.infinity,
+                            margin: const EdgeInsets.symmetric(
+                                horizontal: 0, vertical: 5),
+                            child: CachedNetworkImage(
+                              fadeInCurve: Curves.easeIn,
+                              imageUrl: imageUrl,
+                              fit: BoxFit.fill,
+                              placeholder: (context, url) => const Center(
+                                child: CircularProgressIndicator(),
+                              ),
+                              errorWidget: (context, url, error) =>
+                                  const Center(
+                                child: Icon(Icons.error),
+                              ),
+                            ),
+                          ));
                     },
                   );
                 }).toList(),

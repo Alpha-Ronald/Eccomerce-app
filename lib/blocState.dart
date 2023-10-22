@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
-import 'package:flutter_projects/landing_page.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_projects/products.dart';
 
 //CART EVENT
 
@@ -44,6 +44,7 @@ abstract class CartState {
 }
 
 class ProductAdded extends CartState {
+  @override
   final List<Product> cartItem;
 
   ProductAdded({required this.cartItem});
@@ -56,6 +57,7 @@ class ProductAdded extends CartState {
 }
 
 class ProductRemoved extends CartState {
+  @override
   final List<Product> cartItem;
 
   ProductRemoved({required this.cartItem});
@@ -87,7 +89,7 @@ class CartBloc extends Bloc<CartEvent, CartState> {
   }
 }
 
-//had to downgrade the dependency to futer boc7.0.0
+//had to downgrade the dependency to flutter boc7.0.0
 
 //i'd create a new branch and try and make the code work for flutter bloc 8.1.3
 

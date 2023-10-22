@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_projects/blocState.dart';
 import 'package:flutter_projects/cartPage.dart';
 import 'package:flutter_projects/count_controller.dart';
-import 'package:flutter_projects/landing_page.dart';
 import 'package:badges/badges.dart' as badges;
+import 'package:flutter_projects/products.dart';
 
 class ProductDetails2 extends StatefulWidget {
   const ProductDetails2({super.key, required this.product});
