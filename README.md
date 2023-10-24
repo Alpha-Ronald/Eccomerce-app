@@ -2,6 +2,10 @@
 
 My first APP
 
-## Ecommerce App being tested with images and details of shoes
+Ecommerce displaying images and details of shoes
+
+## Bloc state management used
+
+## Simple UI design such as grid view, carousel slider.
 
  
