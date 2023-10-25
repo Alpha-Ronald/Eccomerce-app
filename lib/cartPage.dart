@@ -40,11 +40,6 @@ class CartPageState extends State<CartPage> {
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            /*Expanded(
-                  child: SingleChildScrollView(
-                    child: Column(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [*/
             BlocBuilder<CartBloc, CartState>(
               builder: (_, cartState) {
                 return Expanded(
@@ -259,33 +254,6 @@ class CartPageState extends State<CartPage> {
           ],
         ),
       ),
-
-      /*Container(
-                    width: double.infinity,
-                    height: 100,
-                    decoration: const BoxDecoration(
-                      color: Colors.teal,
-                      boxShadow: [
-                        BoxShadow(
-                          blurRadius: 4,
-                          color: Color(0x320E151B),
-                          offset: Offset(0, -2),
-                        )
-                      ],
-                      borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(0),
-                        bottomRight: Radius.circular(0),
-                        topLeft: Radius.circular(16),
-                        topRight: Radius.circular(16),
-                      ),
-                    ),
-                    alignment: const AlignmentDirectional(0, -0.35),
-                    child: const Text(
-                      'Checkout (\$230.20)',
-                      style: TextStyle(
-                          color: Colors.black, fontWeight: FontWeight.bold),
-                    ),
-                  ),*/
     );
   }
 }

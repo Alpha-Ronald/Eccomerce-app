@@ -29,12 +29,12 @@ class ProductDetails2State extends State<ProductDetails2> {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: true,
-        backgroundColor: Colors.teal.withOpacity(0.5),
-        title: Text(
-          ' ${widget.product.name}',
+        backgroundColor: Colors.teal.withOpacity(0.2),
+        title: const Text(
+          'Product Details',
           textAlign: TextAlign.center,
-          style: const TextStyle(
-              color: Colors.black,
+          style: TextStyle(
+              color: Colors.white70,
               fontSize: 29,
               fontStyle: FontStyle.italic,
               fontWeight: FontWeight.bold),
@@ -50,11 +50,11 @@ class ProductDetails2State extends State<ProductDetails2> {
                     style: const TextStyle(color: Colors.white),
                   ),
                   showBadge: true,
-                  badgeStyle: const badges.BadgeStyle(
+                  badgeStyle: badges.BadgeStyle(
                     shape: badges.BadgeShape.circle,
-                    badgeColor: Colors.black,
+                    badgeColor: Colors.tealAccent.withOpacity(0.5),
                     elevation: 4,
-                    padding: EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
+                    padding: const EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
                   ),
                   position: badges.BadgePosition.topEnd(),
                   //animationType: BadgeAnimationType.scale,toAimate: true
@@ -66,7 +66,7 @@ class ProductDetails2State extends State<ProductDetails2> {
                               builder: (context) => const CartPage()));
                     },
                     icon: const Icon(
-                      Icons.shopping_bag_sharp,
+                      Icons.shopping_cart,
                       size: 30,
                     ),
                   ),
@@ -92,6 +92,7 @@ class ProductDetails2State extends State<ProductDetails2> {
                   fit: BoxFit.cover,
                 ),
               ),
+              //product details
               Container(
                   width: double.maxFinite,
                   decoration: BoxDecoration(
@@ -121,15 +122,14 @@ class ProductDetails2State extends State<ProductDetails2> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(16, 0, 16, 0),
+                          Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  16, 0, 16, 0),
                               child: Text(
-                                'Details',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
+                                'Name: ' ' ${widget.product.name}',
+                                style: const TextStyle(
                                   color: Colors.white,
-                                  fontWeight: FontWeight.bold,
+                                  //fontWeight: FontWeight.bold
                                   fontSize: 30,
                                 ),
                               )),
@@ -140,21 +140,24 @@ class ProductDetails2State extends State<ProductDetails2> {
                             padding: const EdgeInsetsDirectional.fromSTEB(
                                 16, 4, 0, 0),
                             child: Text(
-                              '\$${widget.product.price}',
+                              '\$ ${widget.product.price}',
                               textAlign: TextAlign.start,
                               style: const TextStyle(
-                                  color: Colors.white70, fontSize: 25),
+                                  color: Colors.tealAccent,
+                                  fontSize: 25,
+                                  fontWeight: FontWeight.bold),
                             ),
                           ),
                           const SizedBox(
                             height: 10,
                           ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                16, 8, 10, 8),
+                          const Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(16, 8, 10, 8),
                             child: Text(
-                              'Name: ${widget.product.name} \n\nAvailable Sizes: 39,40,42, 43, 44 \n\nColors: \n\nDescription:\nIntroducing our sleek and stylish sneaker shoe designed for both fashion and function. Crafted with premium materials, its breathable mesh upper provides comfort and ventilation. The cushioned insole and durable rubber outsole ensure all day comfort and support. Its modern design features a streamlined silhouette, making it perfect for any casual or athletic occasion. Elevate your footwear game with these versatile sneakers.',
-                              style: const TextStyle(
+                              '\nAvailable Sizes: 39,40,42, 43, 44 \n\nColors: \n\nDescription:\n% Introducing our sleek and stylish sneaker shoe designed for both fashion and function.\n% Crafted with premium materials, its breathable mesh upper provides comfort and ventilation.\n% The cushioned insole and durable rubber outsole ensure all day comfort and support.\n% Its modern design features a streamlined silhouette, making it perfect for any casual or athletic occasion. \n% Elevate your footwear game with these versatile sneakers.',
+                              style: TextStyle(
+                                height: 1.5,
                                 color: Colors.white,
                                 fontSize: 20,
                               ),
@@ -164,24 +167,18 @@ class ProductDetails2State extends State<ProductDetails2> {
                       ),
                     ),
                   ))
+              //product details end, wrap code in a stack to achieve desired results
             ],
           ))),
           Material(
             color: Colors.transparent,
             elevation: 3,
-            shape:
-                const RoundedRectangleBorder(borderRadius: BorderRadius.zero),
             child: Container(
               width: double.infinity,
               height: 85,
               decoration: BoxDecoration(
-                  color: Colors.transparent.withOpacity(0.1),
-                  boxShadow: [
-                    BoxShadow(
-                        blurRadius: 4,
-                        color: Colors.teal.withOpacity(0.1),
-                        offset: const Offset(0, -2)),
-                  ]),
+                color: Colors.transparent.withOpacity(0.1),
+              ),
               child: Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(25, 10, 25, 15),
                 child: Row(
@@ -219,25 +216,24 @@ class ProductDetails2State extends State<ProductDetails2> {
                     ),
                     //trying to input a button that works with the bloc directly into the product details page
                     ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.teal,
+                            minimumSize: const Size(170, 40),
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20))),
                         onPressed: () {
                           Product p = widget.product;
                           p.quantity = countControllerValue!.toInt();
                           BlocProvider.of<CartBloc>(context).add(AddProduct(p));
                         },
-                        child: Container(
-                            width: 100,
-                            height: 50,
-                            decoration: const BoxDecoration(
-                              // color: Colors.purple,
-                              shape: BoxShape.rectangle,
-                            ),
-                            child: const Center(
-                              child: Text(
-                                'Add to cart',
-                                textAlign: TextAlign.center,
-                                selectionColor: Colors.white,
-                              ),
-                            )))
+                        child: const Center(
+                          child: Text(
+                            'Add to cart',
+                            textAlign: TextAlign.center,
+                            selectionColor: Colors.white,
+                            style: TextStyle(fontSize: 16),
+                          ),
+                        ))
                   ],
                 ),
               ),
