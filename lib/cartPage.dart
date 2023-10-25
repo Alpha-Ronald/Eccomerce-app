@@ -38,7 +38,7 @@ class CartPageState extends State<CartPage> {
         onTap: () => FocusScope.of(context).unfocus(),
         child: Column(
           mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          //mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             BlocBuilder<CartBloc, CartState>(
               builder: (_, cartState) {
@@ -147,10 +147,16 @@ class CartPageState extends State<CartPage> {
                   Text(
                     'Price Breakdown',
                     style: TextStyle(
-                        color: Colors.teal, fontWeight: FontWeight.bold),
+                      color: Colors.teal,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                    ),
                   )
                 ],
               ),
+            ),
+            const SizedBox(
+              height: 10,
             ),
             const Padding(
               padding: EdgeInsetsDirectional.fromSTEB(24, 4, 24, 0),
@@ -161,15 +167,18 @@ class CartPageState extends State<CartPage> {
                   Text(
                     'Base Price',
                     style: TextStyle(
-                        color: Colors.teal, fontWeight: FontWeight.bold),
+                        color: Colors.white, fontWeight: FontWeight.bold),
                   ),
                   Text(
                     '\$156.00',
                     style: TextStyle(
-                        color: Colors.blue, fontWeight: FontWeight.bold),
+                        color: Colors.white, fontWeight: FontWeight.bold),
                   )
                 ],
               ),
+            ),
+            const SizedBox(
+              height: 7,
             ),
             const Padding(
               padding: EdgeInsetsDirectional.fromSTEB(24, 4, 24, 0),
@@ -180,15 +189,18 @@ class CartPageState extends State<CartPage> {
                   Text(
                     'Taxes',
                     style: TextStyle(
-                        color: Colors.teal, fontWeight: FontWeight.bold),
+                        color: Colors.white, fontWeight: FontWeight.bold),
                   ),
                   Text(
                     '\$24.20',
                     style: TextStyle(
-                        color: Colors.teal, fontWeight: FontWeight.bold),
+                        color: Colors.white, fontWeight: FontWeight.bold),
                   ),
                 ],
               ),
+            ),
+            const SizedBox(
+              height: 5,
             ),
             Padding(
               padding: const EdgeInsetsDirectional.fromSTEB(24, 4, 24, 24),
@@ -202,7 +214,9 @@ class CartPageState extends State<CartPage> {
                       const Text(
                         'Total',
                         style: TextStyle(
-                            color: Colors.teal, fontWeight: FontWeight.bold),
+                            color: Colors.blueGrey,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20),
                       ),
                       IconButton(
                         icon: const Icon(
@@ -219,9 +233,11 @@ class CartPageState extends State<CartPage> {
                     ],
                   ),
                   const Text(
-                    '\$230.20',
+                    '\$ 230.20',
                     style: TextStyle(
-                        color: Colors.teal, fontWeight: FontWeight.bold),
+                        color: Colors.teal,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20),
                   ),
                 ],
               ),
@@ -248,8 +264,10 @@ class CartPageState extends State<CartPage> {
               alignment: const AlignmentDirectional(0, -0.35),
               child: const Text(
                 'Checkout (\$230.20)',
-                style:
-                    TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                style: TextStyle(
+                    color: Colors.white70,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20),
               ),
             ),
           ],
