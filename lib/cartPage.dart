@@ -27,7 +27,7 @@ class CartPageState extends State<CartPage> {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        centerTitle: true,
+        //centerTitle: true,
         backgroundColor: Colors.teal.withOpacity(0.2),
         title: const Text(
           'Cart',
@@ -56,11 +56,11 @@ class CartPageState extends State<CartPage> {
                               width: double.infinity,
                               height: 100,
                               decoration: BoxDecoration(
-                                  color: Colors.teal,
+                                  color: Colors.blueGrey.withOpacity(0.5),
                                   borderRadius: BorderRadius.circular(12)),
                               child: Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
-                                    16, 8, 8, 8),
+                                    16, 2, 8, 2),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   mainAxisAlignment:
@@ -90,13 +90,11 @@ class CartPageState extends State<CartPage> {
                                             CrossAxisAlignment.start,
                                         children: [
                                           Padding(
-                                              padding:
-                                                  const EdgeInsetsDirectional
-                                                      .fromSTEB(0, 0, 0, 0),
+                                              padding: const EdgeInsets.all(5),
                                               child: Text(
                                                 cartItems[index].name,
                                                 style: const TextStyle(
-                                                    color: Colors.red,
+                                                    color: Colors.black,
                                                     fontSize: 20,
                                                     fontWeight:
                                                         FontWeight.bold),
@@ -104,15 +102,18 @@ class CartPageState extends State<CartPage> {
                                           Text(
                                             '\$${cartItems[index].price}',
                                             style: const TextStyle(
-                                                color: Colors.blue),
+                                                color: Colors.tealAccent,
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 18),
                                           ),
                                           Padding(
-                                            padding: const EdgeInsetsDirectional
-                                                .fromSTEB(0, 0, 0, 0),
+                                            padding: const EdgeInsets.all(5),
                                             child: Text(
                                               'Quantity: ${cartItems[index].quantity}',
                                               style: const TextStyle(
-                                                  color: Colors.red),
+                                                  color: Colors.black,
+                                                  fontSize: 15,
+                                                  fontWeight: FontWeight.bold),
                                             ),
                                           )
                                         ],
@@ -126,8 +127,8 @@ class CartPageState extends State<CartPage> {
                                         },
                                         icon: const Icon(
                                           Icons.delete_outline_rounded,
-                                          color: Colors.red,
-                                          size: 20,
+                                          color: Colors.white70,
+                                          size: 22,
                                         ))
                                   ],
                                 ),
