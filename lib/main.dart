@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_projects/signUp.dart';
 
 import 'package:flutter_projects/blocObserverdemo.dart';
 import 'package:flutter_projects/blocState.dart';
@@ -26,7 +27,7 @@ class FirstApp extends StatelessWidget {
         ],
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
-          home: const SplashScreen(),
+          home: const SignUpPage(),
           theme: ThemeData.dark(),
         ));
   }
