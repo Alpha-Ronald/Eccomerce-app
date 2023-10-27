@@ -136,17 +136,32 @@ class ProductDetails2State extends State<ProductDetails2> {
                       const SizedBox(
                         height: 10,
                       ),
-                      const Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(16, 8, 10, 8),
-                        child: Text(
-                          '\nAvailable Sizes: 39,40,42, 43, 44 \n\nColors: \n\nDescription:\n% Introducing our sleek and stylish sneaker shoe designed for both fashion and function.\n% Crafted with premium materials, its breathable mesh upper provides comfort and ventilation.\n% The cushioned insole and durable rubber outsole ensure all day comfort and support.\n% Its modern design features a streamlined silhouette, making it perfect for any casual or athletic occasion. \n% Elevate your footwear game with these versatile sneakers.',
-                          style: TextStyle(
-                            height: 1.5,
-                            color: Colors.white,
-                            fontSize: 20,
+                      const Row(children: <Widget>[
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(16, 8, 10, 8),
+                          child: Text(
+                            'Available Sizes: ',
+                            style: TextStyle(
+                              height: 1.5,
+                              color: Colors.white,
+                              fontSize: 20,
+                            ),
                           ),
                         ),
+                      ]),
+                      const SizedBox(
+                        height: 6,
                       ),
+                      const Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(16, 8, 10, 8),
+                          child: Text(
+                            'Colors: \n\nDescription:\n% Introducing our sleek and stylish sneaker shoe designed for both fashion and function.\n% Crafted with premium materials, its breathable mesh upper provides comfort and ventilation.\n% The cushioned insole and durable rubber outsole ensure all day comfort and support.\n% Its modern design features a streamlined silhouette, making it perfect for any casual or athletic occasion. \n% Elevate your footwear game with these versatile sneakers.',
+                            style: TextStyle(
+                              height: 1.5,
+                              color: Colors.white,
+                              fontSize: 20,
+                            ),
+                          ))
                     ],
                   ),
                 ),
