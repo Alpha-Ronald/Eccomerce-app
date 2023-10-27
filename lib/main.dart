@@ -4,12 +4,6 @@ import 'package:flutter_projects/signUp.dart';
 
 import 'package:flutter_projects/blocObserverdemo.dart';
 import 'package:flutter_projects/blocState.dart';
-import 'package:flutter_projects/splashscreen.dart';
-
-/*void main() {
-  runApp(
-      BlocProvider(create: (context) => CartBloc(), child: const FirstApp()));
-}*/
 
 void main() {
   Bloc.observer = SimpleBlocObserver();
