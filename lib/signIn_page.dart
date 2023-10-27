@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_projects/productListing.dart';
 import 'package:flutter_projects/signUp.dart';
-//import 'package:flutter_projects/main.dart';
 
 class SignInPage extends StatelessWidget {
   const SignInPage({super.key});

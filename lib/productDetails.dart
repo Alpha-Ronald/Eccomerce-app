@@ -93,80 +93,64 @@ class ProductDetails2State extends State<ProductDetails2> {
                 ),
               ),
               //product details
-              Container(
-                  width: double.maxFinite,
-                  decoration: BoxDecoration(
-                    borderRadius:
-                        const BorderRadius.vertical(top: Radius.circular(15)),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black26.withOpacity(0.1),
-                        // Shadow color
-                        offset: const Offset(0, 0),
-                        // Shadow offset (horizontal, vertical)
-                        blurRadius: 0,
-                        // Spread of the shadow
-                        spreadRadius: 0, // How much the shadow expands
+              Card(
+                elevation: 4,
+                //margin: const EdgeInsets.only(top: 16.0),
+                shape: const RoundedRectangleBorder(
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(35),
+                    topRight: Radius.circular(35),
+                  ),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(7),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              16, 0, 16, 0),
+                          child: Text(
+                            'Name: ' ' ${widget.product.name}',
+                            style: const TextStyle(
+                              color: Colors.white,
+                              //fontWeight: FontWeight.bold
+                              fontSize: 30,
+                            ),
+                          )),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      Padding(
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(16, 4, 0, 0),
+                        child: Text(
+                          '\$ ${widget.product.price}',
+                          textAlign: TextAlign.start,
+                          style: const TextStyle(
+                              color: Colors.tealAccent,
+                              fontSize: 25,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      const Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(16, 8, 10, 8),
+                        child: Text(
+                          '\nAvailable Sizes: 39,40,42, 43, 44 \n\nColors: \n\nDescription:\n% Introducing our sleek and stylish sneaker shoe designed for both fashion and function.\n% Crafted with premium materials, its breathable mesh upper provides comfort and ventilation.\n% The cushioned insole and durable rubber outsole ensure all day comfort and support.\n% Its modern design features a streamlined silhouette, making it perfect for any casual or athletic occasion. \n% Elevate your footwear game with these versatile sneakers.',
+                          style: TextStyle(
+                            height: 1.5,
+                            color: Colors.white,
+                            fontSize: 20,
+                          ),
+                        ),
                       ),
                     ],
                   ),
-                  child: ClipRRect(
-                    borderRadius: const BorderRadius.only(
-                      bottomLeft: Radius.circular(0),
-                      bottomRight: Radius.circular(0),
-                      topLeft: Radius.circular(15),
-                      topRight: Radius.circular(15),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(8),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  16, 0, 16, 0),
-                              child: Text(
-                                'Name: ' ' ${widget.product.name}',
-                                style: const TextStyle(
-                                  color: Colors.white,
-                                  //fontWeight: FontWeight.bold
-                                  fontSize: 30,
-                                ),
-                              )),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                16, 4, 0, 0),
-                            child: Text(
-                              '\$ ${widget.product.price}',
-                              textAlign: TextAlign.start,
-                              style: const TextStyle(
-                                  color: Colors.tealAccent,
-                                  fontSize: 25,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          const Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(16, 8, 10, 8),
-                            child: Text(
-                              '\nAvailable Sizes: 39,40,42, 43, 44 \n\nColors: \n\nDescription:\n% Introducing our sleek and stylish sneaker shoe designed for both fashion and function.\n% Crafted with premium materials, its breathable mesh upper provides comfort and ventilation.\n% The cushioned insole and durable rubber outsole ensure all day comfort and support.\n% Its modern design features a streamlined silhouette, making it perfect for any casual or athletic occasion. \n% Elevate your footwear game with these versatile sneakers.',
-                              style: TextStyle(
-                                height: 1.5,
-                                color: Colors.white,
-                                fontSize: 20,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ))
+                ),
+              )
               //product details end, wrap code in a stack to achieve desired results
             ],
           ))),
