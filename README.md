@@ -1,11 +1,9 @@
 # flutter_projects
 
-My first APP
-
-Ecommerce displaying images and details of shoes
+Simple Ecommerce displayig nice kicks.
 
 ## Bloc state management used
 
-## Simple UI design such as grid view, carousel slider.
+## Simple UI design such as grid view and carousel slider.
 
  
