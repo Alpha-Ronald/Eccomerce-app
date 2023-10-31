@@ -1,6 +1,6 @@
-# flutter_projects
+# flutter_project
 
-Simple Ecommerce displayig nice kicks.
+Simple Ecommerce displaying nice kicks.
 
 ## Bloc state management used
 
