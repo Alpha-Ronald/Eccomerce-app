@@ -215,19 +215,3 @@ class LandingPage extends StatelessWidget {
             ])));
   }
 }
-
-/*Card(
-                          elevation: 05,
-                          margin: const EdgeInsets.all(5),
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(20)),
-                          color: Colors.tealAccent.withOpacity(0.4),
-                          child: CachedNetworkImage(
-                            imageUrl: product.imageUrl,
-                            fit: BoxFit.contain,
-                            placeholder: (context, url) =>
-                            const Center(
-                              child: CircularProgressIndicator(),
-                            ),
-                          ),
-                        )*/
