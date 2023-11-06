@@ -44,12 +44,6 @@ class SignUpPage extends StatelessWidget {
                   prefixIcon: Icon(Icons.account_circle),
                   labelText: 'Username'),
             ),
-            /*const SizedBox(
-              height: 10,
-            ),
-            const TextField(
-              decoration: InputDecoration(labelText: 'Gender'),
-            ),*/
             const SizedBox(
               height: 15,
             ),
@@ -60,18 +54,6 @@ class SignUpPage extends StatelessWidget {
             const SizedBox(
               height: 15,
             ),
-            /*const TextField(
-              decoration: InputDecoration(labelText: 'Phone number'),
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            const TextField(
-              decoration: InputDecoration(labelText: 'Address'),
-            ),
-            const SizedBox(
-              height: 10,
-            ),*/
             const TextField(
               obscureText: true,
               decoration: InputDecoration(
@@ -190,4 +172,3 @@ class SignUpSuccessful extends StatelessWidget {
             )));
   }
 }
-
