@@ -1,9 +1,31 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_projects/firebase_auth_implementation/firebase_auth_services.dart';
 import 'package:flutter_projects/signIn_page.dart';
 
-class SignUpPage extends StatelessWidget {
+class SignUpPage extends StatefulWidget {
   const SignUpPage({super.key});
+
+  @override
+  State<SignUpPage> createState() => SignUpPageState();
+}
+
+class SignUpPageState extends State<SignUpPage> {
+  final FirebaseAuthService _auth = FirebaseAuthService();
+
+  final TextEditingController _usernameController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+
+  @override
+  void dispose() {
+    _usernameController.dispose();
+    _emailController.dispose();
+    _passwordController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -39,28 +61,31 @@ class SignUpPage extends StatelessWidget {
             const SizedBox(
               height: 50,
             ),
-            const TextField(
-              decoration: InputDecoration(
+            TextField(
+              controller: _usernameController,
+              decoration: const InputDecoration(
                   prefixIcon: Icon(Icons.account_circle),
                   labelText: 'Username'),
             ),
             const SizedBox(
               height: 15,
             ),
-            const TextField(
-              decoration: InputDecoration(
+            TextField(
+              controller: _emailController,
+              decoration: const InputDecoration(
                   labelText: 'Email', prefixIcon: Icon(Icons.mail)),
             ),
             const SizedBox(
               height: 15,
             ),
-            const TextField(
+            TextField(
+              controller: _passwordController,
               obscureText: true,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                   labelText: 'New Password',
                   prefixIcon: Icon(CupertinoIcons.padlock)),
             ),
-            const SizedBox(
+            /*const SizedBox(
               height: 15,
             ),
             const TextField(
@@ -68,15 +93,16 @@ class SignUpPage extends StatelessWidget {
               decoration: InputDecoration(
                   labelText: 'Confirm Password',
                   prefixIcon: Icon(CupertinoIcons.padlock_solid)),
-            ),
+            ),*/
             const SizedBox(height: 60),
             ElevatedButton(
-              onPressed: () {
+              onPressed: _signUp,
+              /*() {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
                         builder: (context) => const SignUpSuccessful()));
-              },
+              },*/
               style: ElevatedButton.styleFrom(
                   padding:
                       const EdgeInsets.symmetric(horizontal: 40, vertical: 16),
@@ -121,6 +147,21 @@ class SignUpPage extends StatelessWidget {
       ),
     );
   }
+
+  void _signUp() async {
+    String username = _usernameController.text;
+    String email = _emailController.text;
+    String password = _passwordController.text;
+
+    User? user = await _auth.signUpWithEmailAndPassword(email, password);
+
+    if (user != null) {
+      print('User is Succesfully created');
+      Navigator.pushNamed(context, '/home');
+    } else {
+      print('Some error occured');
+    }
+  }
 }
 
 class SignUpSuccessful extends StatelessWidget {
@@ -129,7 +170,7 @@ class SignUpSuccessful extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        /*appBar: AppBar(
+      /*appBar: AppBar(
           backgroundColor: Colors.teal.withOpacity(0.2),
           title: const Text(
             'Rex Shoe collection',
