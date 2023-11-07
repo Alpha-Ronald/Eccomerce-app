@@ -170,7 +170,7 @@ class SignUpSuccessful extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      /*appBar: AppBar(
+        /*appBar: AppBar(
           backgroundColor: Colors.teal.withOpacity(0.2),
           title: const Text(
             'Rex Shoe collection',
