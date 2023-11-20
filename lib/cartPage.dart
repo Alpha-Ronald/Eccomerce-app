@@ -56,7 +56,7 @@ class CartPageState extends State<CartPage> {
                               width: double.infinity,
                               height: 100,
                               decoration: BoxDecoration(
-                                  color: Colors.blueGrey.withOpacity(0.5),
+                                  color: Colors.blueGrey.withOpacity(0.4),
                                   borderRadius: BorderRadius.circular(12)),
                               child: Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
@@ -72,8 +72,8 @@ class CartPageState extends State<CartPage> {
                                         borderRadius: BorderRadius.circular(12),
                                         child: Image.network(
                                           cartItems[index].imageUrl,
-                                          width: 80,
-                                          height: 80,
+                                          width: 120,
+                                          height: 100,
                                           fit: BoxFit.fitWidth,
                                         ),
                                       ),

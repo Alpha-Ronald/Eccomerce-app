@@ -25,43 +25,43 @@ class Product {
 final List<Product> products = [
   Product(
       id: 1,
-      name: 'Champion',
+      name: 'Kick 1',
       imageUrl:
           'https://images.unsplash.com/photo-1588099768550-4014589e03e0?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHNuZWFrZXJ8ZW58MHx8MHx8fDA%3D',
       price: 55.5),
   Product(
       id: 2,
-      name: 'Stark',
+      name: 'Kick 2',
       imageUrl:
           'https://images.unsplash.com/photo-1597045566677-8cf032ed6634?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHNuZWFrZXJ8ZW58MHx8MHx8fDA%3D',
       price: 65.5),
   Product(
       id: 3,
-      name: 'Stone',
+      name: 'Kick 3',
       imageUrl:
           'https://images.unsplash.com/photo-1603787081207-362bcef7c144?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c25lYWtlcnxlbnwwfHwwfHx8MA%3D%3D',
       price: 65.5),
   Product(
       id: 4,
-      name: 'Supra',
+      name: 'Kick 4',
       imageUrl:
           'https://images.unsplash.com/photo-1579338559194-a162d19bf842?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8c25lYWtlcnN8ZW58MHx8MHx8fDA%3D&w=1000&q=80',
       price: 65.5),
   Product(
       id: 5,
-      name: 'Storm',
+      name: 'Kick 5',
       imageUrl:
           'https://images.unsplash.com/photo-1543508282-6319a3e2621f?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzF8fHNuZWFrZXJ8ZW58MHx8MHx8fDA%3D',
       price: 65.5),
   Product(
       id: 6,
-      name: 'Rike',
+      name: 'Kick 6',
       imageUrl:
           'https://images.unsplash.com/photo-1600269452121-4f2416e55c28?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDJ8fHNuZWFrZXJ8ZW58MHx8MHx8fDA%3D',
       price: 65.5),
   Product(
       id: 7,
-      name: 'Vane',
+      name: 'Kick 7',
       imageUrl:
           'https://images.unsplash.com/photo-1581017316471-1f6ef7ce6fd3?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjN8fHNuZWFrZXJ8ZW58MHx8MHx8fDA%3D',
       price: 65.5),

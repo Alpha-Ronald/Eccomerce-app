@@ -102,6 +102,7 @@ class ProductDetails2State extends State<ProductDetails2> {
                     topRight: Radius.circular(35),
                   ),
                 ),
+                color: Colors.black12,
                 child: Padding(
                   padding: const EdgeInsets.all(7),
                   child: Column(
@@ -111,7 +112,7 @@ class ProductDetails2State extends State<ProductDetails2> {
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               16, 0, 16, 0),
                           child: Text(
-                            'Name: ' ' ${widget.product.name}',
+                            widget.product.name,
                             style: const TextStyle(
                               color: Colors.white,
                               //fontWeight: FontWeight.bold
